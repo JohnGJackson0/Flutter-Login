@@ -33,7 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         formStatus: FormSubmitting()));
 
     try {
-      await authRepository.login();
+      await authRepository.login(false);
       emit(LoginState(
           username: state.username,
           password: state.password,
